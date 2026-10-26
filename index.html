@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>배민 회사점심 | 런치패스 · 추가 할인 · 단체 주문</title>
-<meta name="description" content="회사 점심, 단체 도시락도 배민으로. 런치패스, 금액대별 추가 할인, 상황별 패키지, 예약주문까지 앱에서 한 번에.">
+<title>한끼온 회사점심 | 런치패스 · 추가 할인 · 단체 주문</title>
+<meta name="description" content="회사 점심, 단체 도시락도 한끼온으로. 런치패스, 금액대별 추가 할인, 상황별 패키지, 예약주문까지 앱에서 한 번에.">
 <style>
 /* 페이퍼로지 (fonts/ 폴더에 포함) */
 @font-face{font-family:"Paperlogy";font-weight:400;font-display:swap;src:local("Paperlogy 4Regular"),local("Paperlogy-4Regular"),url("fonts/Paperlogy-4Regular.ttf") format("truetype")}
@@ -15,10 +15,10 @@
 @font-face{font-family:"Paperlogy";font-weight:900;font-display:swap;src:local("Paperlogy 9Black"),local("Paperlogy-9Black"),url("fonts/Paperlogy-9Black.ttf") format("truetype")}
 
 :root{
-  --mint:#2ac1bc;        /* 배달의민족 메인 컬러 */
-  --mint-d:#17908c;      /* 흰 배경 위 텍스트용 */
-  --mint-dd:#0e5e5b;
-  --mint-bg:#e6f8f7;
+  --mint:#1ec8a5;        /* 브랜드 메인 컬러 */
+  --mint-d:#12907a;      /* 흰 배경 위 텍스트용 */
+  --mint-dd:#0b5c4e;
+  --mint-bg:#e4f8f3;
   --ink:#1e1e23; --sub:#667085; --line:#e5e9ec; --bg:#f3f6f7; --card:#fff;
   --yellow:#ffd43b; --red:#ff5a5f;
 }
@@ -35,7 +35,7 @@ h2 em{font-style:normal;color:var(--mint-d)}
 .lead{color:var(--sub);font-size:15px;margin-top:10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:54px;padding:0 26px;border-radius:14px;font-weight:800;font-size:16px;transition:.15s;letter-spacing:-.01em}
 .btn-mint{background:var(--mint);color:#fff}
-.btn-mint:hover{background:#20a8a3}
+.btn-mint:hover{background:#19ad8d}
 .btn-block{width:100%}
 .sec-cta{width:100%;margin-top:24px}
 .btn-white{background:#fff;color:var(--mint-dd)}
@@ -78,7 +78,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .quick .ic{width:56px;height:56px;margin:0 auto 8px;border-radius:18px;background:var(--mint-bg);color:var(--mint-d);display:grid;place-items:center;font-size:20px;font-weight:900;letter-spacing:-.02em}
 
 /* A pass */
-.pass{margin-top:26px;background:linear-gradient(140deg,#2ac1bc 0%,#17908c 100%);color:#fff;border-radius:24px;padding:28px 24px;position:relative;overflow:hidden}
+.pass{margin-top:26px;background:linear-gradient(140deg,#1ec8a5 0%,#12907a 100%);color:#fff;border-radius:24px;padding:28px 24px;position:relative;overflow:hidden}
 .pass::after{content:"PASS";position:absolute;right:-6px;bottom:-24px;font-size:110px;font-weight:900;letter-spacing:-.05em;color:rgba(255,255,255,.12);line-height:1}
 .pass .chip{background:rgba(255,255,255,.24);padding:5px 11px;border-radius:999px;font-size:12px;font-weight:800}
 .pass h3{font-size:26px;margin:12px 0 4px;letter-spacing:-.04em;font-weight:900}
@@ -275,7 +275,7 @@ footer li::before{content:"· "}
 
 <header>
   <div class="wrap">
-    <a class="logo" href="#top">배달의민족 <i>회사점심</i></a>
+    <a class="logo" href="#top">한끼온 <i>회사점심</i></a>
     <a class="hd-cta" href="#download" data-cta="header">앱에서 받기</a>
   </div>
 </header>
@@ -285,7 +285,7 @@ footer li::before{content:"· "}
   <!-- 1. HERO -->
   <section class="hero"><div class="hero-inner"><div class="hero-copy">
     <span class="tag">직장인 회사점심 혜택</span>
-    <h1>회사 점심,<br>배민으로 <span>더 싸게</span></h1>
+    <h1>회사 점심,<br>한끼온으로 <span>더 싸게</span></h1>
     <p>단체 도시락부터 야근 식대까지<br>회사 점심에 필요한 혜택을 앱에서 한 번에</p>
     <ul class="chips">
       <li>런치패스</li>
@@ -338,7 +338,7 @@ footer li::before{content:"· "}
     <p class="lead">평일 점심마다 쿠폰 챙기기 번거로웠다면, 패스 하나로 자동 적용.</p>
     <div class="pass">
       <span class="chip">회사점심 전용</span>
-      <h3>배민 런치패스</h3>
+      <h3>한끼온 런치패스</h3>
       <div class="price"><s>월 0,000원</s> <b>월 0,000원</b></div>
       <ul>
         <li>평일 점심(11~14시) 주문 시 할인 자동 적용</li>
@@ -459,7 +459,7 @@ footer li::before{content:"· "}
     <span class="eyebrow">HOW TO</span>
     <h2>이용은 <em>3단계</em>면 끝</h2>
     <div class="steps">
-      <div class="step"><div class="n">1</div><div><b>배민 앱 열기</b><span>기존 배달의민족 계정 그대로 사용</span></div></div>
+      <div class="step"><div class="n">1</div><div><b>한끼온 앱 열기</b><span>기존 한끼온 계정 그대로 사용</span></div></div>
       <div class="step"><div class="n">2</div><div><b>패키지 · 가게 고르기</b><span>상황별 패키지 또는 단체 주문 가능한 가게 선택</span></div></div>
       <div class="step"><div class="n">3</div><div><b>도착 시간 예약하고 결제</b><span>금액대별 추가 할인이 자동 적용돼요</span></div></div>
     </div>
@@ -470,7 +470,7 @@ footer li::before{content:"· "}
     <span class="eyebrow">FAQ</span>
     <h2>자주 묻는 질문</h2>
     <div style="margin-top:14px">
-      <details><summary>이미 배민을 쓰고 있는데 따로 가입해야 하나요?</summary><p>기존 계정 그대로 이용할 수 있어요. 앱을 최신 버전으로 업데이트해 주세요.</p></details>
+      <details><summary>이미 한끼온을 쓰고 있는데 따로 가입해야 하나요?</summary><p>기존 계정 그대로 이용할 수 있어요. 앱을 최신 버전으로 업데이트해 주세요.</p></details>
       <details><summary>금액대별 추가 할인은 다른 쿠폰과 같이 쓸 수 있나요?</summary><p>중복 적용 여부는 쿠폰 종류에 따라 달라요. 결제 화면에서 적용 가능한 혜택을 확인할 수 있습니다. (※ 실제 정책에 맞게 수정)</p></details>
       <details><summary>예약주문은 얼마나 미리 해야 하나요?</summary><p>가게별로 가능한 예약 시간이 다르며, 주문 화면에서 선택 가능한 도착 시간이 표시됩니다. (※ 실제 정책에 맞게 수정)</p></details>
       <details><summary>법인카드로 결제할 수 있나요?</summary><p>결제 수단은 앱 내 결제 화면에서 확인해 주세요. (※ 실제 정책에 맞게 수정)</p></details>
@@ -481,7 +481,7 @@ footer li::before{content:"· "}
   <section class="final" id="download">
     <span class="eyebrow">DOWNLOAD</span>
     <h2>오늘 점심부터<br><em>앱에서</em> 시작하세요</h2>
-    <p class="lead">런치패스 · 추가 할인 · 예약주문, 모두 배민 앱에서</p>
+    <p class="lead">런치패스 · 추가 할인 · 예약주문, 모두 한끼온 앱에서</p>
     <ul class="recap">
       <li><b>런치패스</b>평일 점심 자동 할인</li>
       <li><b>금액대별 추가 할인</b>5만 원 3% · 10만 원 5% · 20만 원 10%</li>
@@ -489,7 +489,7 @@ footer li::before{content:"· "}
       <li><b>예약주문</b>원하는 도착 시간 지정</li>
     </ul>
     <div class="stores">
-      <a class="store primary" id="store-main" href="#" data-cta="final-main">배민 앱 열기 / 다운로드</a>
+      <a class="store primary" id="store-main" href="#" data-cta="final-main">한끼온 앱 열기 / 다운로드</a>
       <a class="store" href="https://apps.apple.com/" data-cta="final-ios">App Store</a>
       <a class="store" href="https://play.google.com/store" data-cta="final-android">Google Play</a>
     </div>
@@ -502,8 +502,9 @@ footer li::before{content:"· "}
       <li>본 페이지의 혜택·가격·조건은 예시 문구이며, 실제 운영 시 최종 정책으로 교체해야 합니다.</li>
       <li>추가 할인은 주문 금액(할인 전 기준 등) 조건에 따라 적용되며, 일부 가게·메뉴는 제외될 수 있습니다.</li>
       <li>혜택은 사전 고지 없이 변경 또는 종료될 수 있습니다.</li>
+      <li>본 페이지는 학습 목적으로 만든 가상 브랜드 "한끼온"의 예시이며, 실제 서비스·기업과 무관합니다.</li>
     </ul>
-    © Landing practice page
+    © 한끼온 (가상 브랜드) · 학습용 랜딩 페이지 실습
   </footer>
 </main>
 
