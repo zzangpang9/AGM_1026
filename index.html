@@ -532,6 +532,7 @@ var ampReady=false;
   }catch(e){}
 })();
 function track(name,props){
+  (window.__ampLog=window.__ampLog||[]).push({name:name,props:props||{}}); // 테스트/디버깅용 기록
   try{ if(ampReady) amplitude.track(name,props||{}); else console.log('[amplitude 미설정]',name,props||{}); }catch(e){}
 }
 
@@ -558,6 +559,17 @@ function track(name,props){
   // TODO: 실제 앱 스토어 / 딥링크(예: 어피어, 브랜치) 주소로 교체
   var url=ios?'https://apps.apple.com/':android?'https://play.google.com/store':'#download';
   document.getElementById('store-main').href=url;
+  // CTA 노출 수집: 버튼이 50% 이상 보이면 위치(data-cta)별로 페이지 로드당 1회 전송
+  if('IntersectionObserver' in window){
+    var seen={};
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var p=e.target.dataset.cta;
+        if(e.isIntersecting && !seen[p]){ seen[p]=1; track('cta_impression',{position:p,utm_source:src||'direct'}); io.unobserve(e.target); }
+      });
+    },{threshold:.5});
+    document.querySelectorAll('[data-cta]').forEach(function(el){ io.observe(el); });
+  }
   document.querySelectorAll('[data-cta]').forEach(function(a){
     a.addEventListener('click',function(){
       // TODO: 분석 도구 이벤트 연결 (GA4 등)
