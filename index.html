@@ -516,7 +516,25 @@ footer li::before{content:"· "}
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@amplitude/analytics-browser@2.11.1/lib/scripts/amplitude-min.umd.js"></script>
 <script>
+// Amplitude (프로젝트 ID 887067) - API Key 는 .env 의 AMPLITUDE_API_KEY 와 동일한 값을 사용합니다.
+var AMP_API_KEY='85ad7c42cb03cd001fedfffb25a6406c'; // 공개용 API Key (브라우저 노출 전제). 비밀 키는 .env 에만 보관
+var ampReady=false;
+(function(){
+  try{
+    if(window.amplitude && AMP_API_KEY){
+      amplitude.init(AMP_API_KEY,{defaultTracking:{pageViews:true,sessions:true,formInteractions:false,fileDownloads:false}});
+      var q=new URLSearchParams(location.search), id=new amplitude.Identify();
+      ['utm_source','utm_medium','utm_campaign'].forEach(function(k){ if(q.get(k)) id.set(k,q.get(k)) });
+      amplitude.identify(id); ampReady=true;
+    }
+  }catch(e){}
+})();
+function track(name,props){
+  try{ if(ampReady) amplitude.track(name,props||{}); else console.log('[amplitude 미설정]',name,props||{}); }catch(e){}
+}
+
 // 마감 카운트다운 (이번 달 말일 23:59:59 기준 예시)
 (function(){
   var now=new Date(), end=new Date(now.getFullYear(), now.getMonth()+1, 0, 23, 59, 59);
@@ -543,7 +561,7 @@ footer li::before{content:"· "}
   document.querySelectorAll('[data-cta]').forEach(function(a){
     a.addEventListener('click',function(){
       // TODO: 분석 도구 이벤트 연결 (GA4 등)
-      console.log('cta_click',a.dataset.cta,src||'direct');
+      track('cta_click',{position:a.dataset.cta,utm_source:src||'direct'});
     });
   });
 })();
@@ -569,7 +587,7 @@ footer li::before{content:"· "}
     tiers.forEach(function(t){t.classList.remove('on'); if(v>=+t.dataset.min) active=t});
     if(active) active.classList.add('on');
   }
-  r.addEventListener('input',upd); upd();
+  var ct; r.addEventListener('input',function(){ upd(); clearTimeout(ct); ct=setTimeout(function(){ track('tier_calc_used',{amount:+r.value}); },600); }); upd();
 })();
 
 // 패키지 탭
@@ -577,7 +595,7 @@ document.querySelectorAll('.tab').forEach(function(t){
   t.addEventListener('click',function(){
     document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
     document.querySelectorAll('.pkg').forEach(function(x){x.classList.remove('on')});
-    t.classList.add('on'); document.getElementById(t.dataset.p).classList.add('on');
+    t.classList.add('on'); document.getElementById(t.dataset.p).classList.add('on'); track('package_tab_view',{package:t.dataset.p});
   });
 });
 
@@ -586,7 +604,7 @@ document.querySelectorAll('.time').forEach(function(b){
   b.addEventListener('click',function(){
     document.querySelectorAll('.time').forEach(function(x){x.classList.remove('on')});
     b.classList.add('on');
-    document.getElementById('rt').textContent=b.dataset.t;
+    document.getElementById('rt').textContent=b.dataset.t; track('reserve_time_select',{time:b.dataset.t});
   });
 });
 </script>
