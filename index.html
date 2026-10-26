@@ -24,7 +24,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Paperlogy","Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:76px;word-break:keep-all;overflow-wrap:break-word}
+body{font-family:"Paperlogy","Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:104px;word-break:keep-all;overflow-wrap:break-word}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .wrap{width:100%;max-width:720px;margin:0 auto}
@@ -269,6 +269,35 @@ footer li::before{content:"· "}
   .sticky .btn{width:100%}
   .btn{padding:0 16px;font-size:15px}
 }
+/* --- 배달앱 느낌 보강 --- */
+.pass .price .off{display:inline-block;margin-left:8px;background:var(--yellow);color:var(--ink);font-size:12px;font-weight:900;padding:3px 8px;border-radius:999px;vertical-align:middle;letter-spacing:0}
+.qr{width:132px;height:132px;padding:10px}
+.qr svg{display:block;width:100%;height:100%}
+.sticky{background:linear-gradient(to top,var(--card) 62%,rgba(255,255,255,0));border-top:0;padding-top:18px}
+.cartbar{display:flex;align-items:center;gap:12px;width:100%;background:var(--mint);color:#fff;border-radius:16px;padding:10px 16px 10px 10px;box-shadow:0 8px 24px rgba(18,144,122,.35);transition:transform .15s}
+.cartbar:active{transform:scale(.985)}
+.cb-pill{flex:none;background:#fff;color:var(--mint-d);font-weight:900;font-size:13px;border-radius:12px;padding:10px 12px;letter-spacing:-.02em}
+.cb-txt{flex:1;min-width:0;font-weight:800;font-size:17px;line-height:1.25;letter-spacing:-.02em}
+.cb-txt small{display:block;font-size:11px;font-weight:600;opacity:.92;letter-spacing:0}
+.cb-arrow{flex:none;font-size:20px;font-weight:900}
+.stores-row{display:flex;gap:12px;margin:24px -20px 0;padding:2px 20px 10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;-webkit-overflow-scrolling:touch}
+.shop{flex:0 0 78%;max-width:320px;scroll-snap-align:start;display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:0 4px 14px rgba(20,40,40,.06)}
+.shop .thumb{flex:none;width:72px;height:72px;border-radius:18px;background:var(--mint-bg);color:var(--mint-d);display:grid;place-items:center;font-size:30px;font-weight:900}
+.shop:nth-child(2) .thumb{background:#fff3c4;color:#8a6a00}
+.shop:nth-child(3) .thumb{background:#ffe3e0;color:#b4382f}
+.shop:nth-child(4) .thumb{background:#e4e8ff;color:#3b45a8}
+.shop .info{min-width:0}
+.shop b{display:block;font-size:16px;font-weight:800;letter-spacing:-.03em}
+.shop .meta{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12px;color:var(--sub);margin-top:4px;font-weight:600}
+.shop .star{color:#f08c00;font-weight:800}
+.shop .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.shop .tags i{font-style:normal;font-size:11px;font-weight:800;color:var(--mint-dd);background:var(--mint-bg);padding:3px 8px;border-radius:6px}
+@media(min-width:900px){
+  .stores-row{display:grid;grid-template-columns:repeat(2,1fr);margin:28px 0 0;padding:0;overflow:visible}
+  .shop{flex:initial;max-width:none}
+  .sticky .wrap{max-width:560px}
+}
+@media(max-width:340px){ .stores-row{margin-left:-14px;margin-right:-14px;padding-left:14px;padding-right:14px;scroll-padding-left:14px} .cb-txt small{display:none} .cb-pill{padding:9px 10px} .cb-txt{font-size:15px} .shop{flex-basis:88%} .shop .thumb{width:56px;height:56px;font-size:24px} }
 </style>
 </head>
 <body>
@@ -339,7 +368,7 @@ footer li::before{content:"· "}
     <div class="pass">
       <span class="chip">회사점심 전용</span>
       <h3>한끼온 런치패스</h3>
-      <div class="price"><s>월 0,000원</s> <b>월 0,000원</b></div>
+      <div class="price"><s>월 9,900원</s> <b>월 4,900원</b><span class="off">50% 할인</span></div>
       <ul>
         <li>평일 점심(11~14시) 주문 시 할인 자동 적용</li>
         <li>점심 전용 가게 쿠폰 매일 제공</li>
@@ -350,7 +379,7 @@ footer li::before{content:"· "}
       </div>
       <div class="week-cap">평일 11~14시 자동 적용</div>
     </div>
-    <p class="notice">※ 가격·할인 조건은 예시이며, 실제 운영 정책에 맞게 수정해 주세요.</p>
+    <p class="notice">※ 월 4,900원은 학습용 예시 가격이며, 실제 운영 정책에 맞게 수정해 주세요.</p>
     <a href="#download" class="btn btn-mint sec-cta" data-cta="pass">런치패스 앱에서 시작하기 →</a>
   </section>
 
@@ -454,6 +483,48 @@ footer li::before{content:"· "}
     <a href="#download" class="btn btn-mint sec-cta" data-cta="reserve">예약주문 앱에서 해보기 →</a>
   </section>
 
+  <!-- 가게 리스트 -->
+  <section id="stores">
+    <span class="eyebrow">POPULAR</span>
+    <h2>우리 팀 점심,<br><em>이런 가게</em>는 어때요</h2>
+    <p class="lead">단체 주문이 많은 가게를 모았어요. (학습용 예시 가게)</p>
+    <div class="stores-row">
+      <a class="shop" href="#download" data-cta="shop-1">
+        <div class="thumb">도</div>
+        <div class="info">
+          <b>든든한 도시락집</b>
+          <div class="meta"><span class="star">★ 4.8</span><span>25~35분</span><span>최소 5만 원</span></div>
+          <div class="tags"><i>런치패스</i><i>추가 3%</i></div>
+        </div>
+      </a>
+      <a class="shop" href="#download" data-cta="shop-2">
+        <div class="thumb">김</div>
+        <div class="info">
+          <b>김밥&amp;샌드 연구소</b>
+          <div class="meta"><span class="star">★ 4.7</span><span>20~30분</span><span>최소 3만 원</span></div>
+          <div class="tags"><i>회의·세미나</i><i>예약주문</i></div>
+        </div>
+      </a>
+      <a class="shop" href="#download" data-cta="shop-3">
+        <div class="thumb">한</div>
+        <div class="info">
+          <b>오늘의 한식뷔페</b>
+          <div class="meta"><span class="star">★ 4.9</span><span>30~40분</span><span>최소 10만 원</span></div>
+          <div class="tags"><i>사내 행사</i><i>추가 5%</i></div>
+        </div>
+      </a>
+      <a class="shop" href="#download" data-cta="shop-4">
+        <div class="thumb">야</div>
+        <div class="info">
+          <b>야근 키친</b>
+          <div class="meta"><span class="star">★ 4.6</span><span>25~35분</span><span>최소 2만 원</span></div>
+          <div class="tags"><i>야근 식대</i><i>런치패스</i></div>
+        </div>
+      </a>
+    </div>
+    <a href="#download" class="btn btn-mint sec-cta" data-cta="stores">앱에서 가게 더 보기 →</a>
+  </section>
+
   <!-- 7. 이용 방법 -->
   <section>
     <span class="eyebrow">HOW TO</span>
@@ -493,8 +564,8 @@ footer li::before{content:"· "}
       <a class="store" href="https://apps.apple.com/" data-cta="final-ios">App Store</a>
       <a class="store" href="https://play.google.com/store" data-cta="final-android">Google Play</a>
     </div>
-    <div class="qr">QR 코드<br>(PC 접속 시)</div>
-    <div class="qr-cap">휴대폰 카메라로 스캔하면 앱 설치 페이지로 이동해요</div>
+    <div class="qr" id="qr" role="img" aria-label="앱 설치 페이지로 이동하는 QR 코드"></div>
+    <div class="qr-cap">휴대폰 카메라로 스캔하면 모바일에서 바로 열려요</div>
   </section>
 
   <footer>
@@ -511,11 +582,14 @@ footer li::before{content:"· "}
 <!-- 하단 고정 CTA -->
 <div class="sticky">
   <div class="wrap">
-    <p><small>런치패스 · 최대 10% 추가 할인 · 예약주문</small>회사점심 혜택, 앱에서 받기</p>
-    <a href="#download" class="btn btn-mint" data-cta="sticky">앱 받기</a>
+    <a href="#download" class="cartbar" data-cta="sticky">
+      <span class="cb-pill">최대 10%</span>
+      <span class="cb-txt"><small>런치패스 · 최대 10% 추가 할인 · 예약주문</small>앱에서 혜택 받기</span>
+      <span class="cb-arrow" aria-hidden="true">→</span>
+    </a>
   </div>
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@amplitude/analytics-browser@2.11.1/lib/scripts/amplitude-min.umd.js"></script>
 <script>
 // Amplitude (프로젝트 ID 887067) - API Key 는 .env 의 AMPLITUDE_API_KEY 와 동일한 값을 사용합니다.
@@ -535,6 +609,15 @@ function track(name,props){
   (window.__ampLog=window.__ampLog||[]).push({name:name,props:props||{}}); // 테스트/디버깅용 기록
   try{ if(ampReady) amplitude.track(name,props||{}); else console.log('[amplitude 미설정]',name,props||{}); }catch(e){}
 }
+
+// QR 코드: 스캔하면 모바일에서 이 랜딩 페이지가 열립니다. TODO: 실제 앱 설치 링크(스토어 단축 URL 등)로 교체
+(function(){
+  var QR_URL='https://zzangpang9.github.io/AGM_1026/?utm_source=pc_qr', box=document.getElementById('qr');
+  try{
+    var qr=qrcode(0,'M'); qr.addData(QR_URL); qr.make();
+    box.innerHTML=qr.createSvgTag({cellSize:4,margin:0,scalable:true});
+  }catch(e){ box.textContent='QR'; }
+})();
 
 // 마감 카운트다운 (이번 달 말일 23:59:59 기준 예시)
 (function(){
