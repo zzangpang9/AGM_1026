@@ -5,26 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>한끼온 회사점심 | 런치패스 · 추가 할인 · 단체 주문</title>
 <meta name="description" content="회사 점심, 단체 도시락도 한끼온으로. 런치패스, 금액대별 추가 할인, 상황별 패키지, 예약주문까지 앱에서 한 번에.">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
-/* 페이퍼로지 (fonts/ 폴더에 포함) */
-@font-face{font-family:"Paperlogy";font-weight:400;font-display:swap;src:local("Paperlogy 4Regular"),local("Paperlogy-4Regular"),url("fonts/Paperlogy-4Regular.ttf") format("truetype")}
-@font-face{font-family:"Paperlogy";font-weight:500;font-display:swap;src:local("Paperlogy 5Medium"),local("Paperlogy-5Medium"),url("fonts/Paperlogy-5Medium.ttf") format("truetype")}
-@font-face{font-family:"Paperlogy";font-weight:600;font-display:swap;src:local("Paperlogy 6SemiBold"),local("Paperlogy-6SemiBold"),url("fonts/Paperlogy-6SemiBold.ttf") format("truetype")}
-@font-face{font-family:"Paperlogy";font-weight:700;font-display:swap;src:local("Paperlogy 7Bold"),local("Paperlogy-7Bold"),url("fonts/Paperlogy-7Bold.ttf") format("truetype")}
-@font-face{font-family:"Paperlogy";font-weight:800;font-display:swap;src:local("Paperlogy 8ExtraBold"),local("Paperlogy-8ExtraBold"),url("fonts/Paperlogy-8ExtraBold.ttf") format("truetype")}
-@font-face{font-family:"Paperlogy";font-weight:900;font-display:swap;src:local("Paperlogy 9Black"),local("Paperlogy-9Black"),url("fonts/Paperlogy-9Black.ttf") format("truetype")}
-
 :root{
   --mint:#1ec8a5;        /* 브랜드 메인 컬러 */
-  --mint-d:#12907a;      /* 흰 배경 위 텍스트용 */
+  --mint-d:#0d7d68;      /* 흰 배경 위 텍스트용 */
   --mint-dd:#0b5c4e;
   --mint-bg:#e4f8f3;
   --ink:#1e1e23; --sub:#667085; --line:#e5e9ec; --bg:#f3f6f7; --card:#fff;
-  --yellow:#ffd43b; --red:#ff5a5f;
+  --yellow:#ffd43b; --red:#d6333a; --on-mint:#0b2e27;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Paperlogy","Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:104px;word-break:keep-all;overflow-wrap:break-word}
+body{font-family:"Pretendard Variable","Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:104px;word-break:keep-all;overflow-wrap:break-word}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .wrap{width:100%;max-width:720px;margin:0 auto}
@@ -34,22 +28,22 @@ h2{font-size:27px;line-height:1.3;font-weight:800;letter-spacing:-.035em}
 h2 em{font-style:normal;color:var(--mint-d)}
 .lead{color:var(--sub);font-size:15px;margin-top:10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:54px;padding:0 26px;border-radius:14px;font-weight:800;font-size:16px;transition:.15s;letter-spacing:-.01em}
-.btn-mint{background:var(--mint);color:#fff}
+.btn-mint{background:var(--mint);color:var(--on-mint)}
 .btn-mint:hover{background:#19ad8d}
 .btn-block{width:100%}
 .sec-cta{width:100%;margin-top:24px}
 .btn-white{background:#fff;color:var(--mint-dd)}
-.hero-cta-copy{display:none;margin-top:26px}
+.hero-cta-copy{display:flex;width:100%;margin-top:22px}
 
 /* header */
 header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;padding:0 20px}
-.logo{font-weight:900;font-size:20px;letter-spacing:-.05em;display:flex;align-items:center;gap:8px;color:var(--mint);white-space:nowrap}
-.logo i{font-style:normal;background:var(--mint);color:#fff;font-size:11px;padding:3px 8px;border-radius:6px;letter-spacing:0}
-.hd-cta{font-size:13px;font-weight:800;color:#fff;background:var(--mint);padding:9px 15px;border-radius:999px;white-space:nowrap}
+.logo{font-weight:900;font-size:20px;letter-spacing:-.05em;display:flex;align-items:center;gap:8px;color:var(--mint-d);white-space:nowrap}
+.logo i{font-style:normal;background:var(--mint);color:var(--on-mint);font-size:12px;padding:3px 8px;border-radius:6px;letter-spacing:0}
+.hd-cta{display:inline-flex;align-items:center;min-height:40px;font-size:13px;font-weight:800;color:var(--on-mint);background:var(--mint);padding:0 16px;border-radius:999px;white-space:nowrap}
 
 /* hero */
-.hero{background:var(--mint);color:#fff;margin-top:0;padding:44px 20px 40px;text-align:center;overflow:hidden;position:relative}
+.hero{background:var(--mint);color:var(--on-mint);margin-top:0;padding:44px 20px 40px;text-align:center;overflow:hidden;position:relative}
 .hero::before{content:"";position:absolute;inset:auto -20% -40% -20%;height:60%;background:radial-gradient(closest-side,rgba(255,255,255,.22),transparent);pointer-events:none}
 .hero-inner{position:relative;display:block}
 .hero .tag{display:inline-block;background:rgba(255,255,255,.22);font-weight:800;font-size:13px;padding:7px 15px;border-radius:999px;letter-spacing:-.01em}
@@ -64,21 +58,21 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .countdown{display:flex;justify-content:center;gap:8px;margin:12px 0 18px}
 .countdown div{background:var(--ink);color:#fff;border-radius:12px;min-width:60px;padding:9px 0}
 .countdown strong{display:block;font-size:26px;font-weight:900;font-variant-numeric:tabular-nums;line-height:1.1}
-.countdown small{font-size:11px;opacity:.7}
+.countdown small{font-size:12px;opacity:.7}
 .coupon{display:flex;align-items:center;justify-content:space-between;gap:10px;border:2px dashed var(--mint);background:var(--mint-bg);border-radius:14px;padding:14px 16px;text-align:left}
 .coupon span{font-size:12px;color:var(--sub);display:block}
 .coupon b{font-size:19px;color:var(--mint-d);letter-spacing:-.04em;font-weight:900;white-space:nowrap}
-.coupon .pct{font-size:34px;font-weight:900;color:var(--mint);line-height:1}
+.coupon .pct{font-size:34px;font-weight:900;color:var(--mint-d);line-height:1}
 .hero-card .btn{margin-top:16px}
 .src{margin-top:12px;font-size:12px;color:var(--sub);min-height:18px}
 
 /* quick nav */
 .quick{margin-top:0;padding:20px 12px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center}
 .quick a{padding:6px 2px;font-size:13px;font-weight:800;line-height:1.3}
-.quick .ic{width:56px;height:56px;margin:0 auto 8px;border-radius:18px;background:var(--mint-bg);color:var(--mint-d);display:grid;place-items:center;font-size:20px;font-weight:900;letter-spacing:-.02em}
+.quick .ic{width:56px;height:56px;margin:0 auto 8px;border-radius:18px;background:var(--mint-bg);display:grid;place-items:center;font-size:28px;line-height:1}
 
 /* A pass */
-.pass{margin-top:26px;background:linear-gradient(140deg,#1ec8a5 0%,#12907a 100%);color:#fff;border-radius:24px;padding:28px 24px;position:relative;overflow:hidden}
+.pass{margin-top:26px;background:linear-gradient(140deg,#0d7d68 0%,#0b5c4e 100%);color:#fff;border-radius:24px;padding:28px 24px;position:relative;overflow:hidden}
 .pass::after{content:"PASS";position:absolute;right:-6px;bottom:-24px;font-size:110px;font-weight:900;letter-spacing:-.05em;color:rgba(255,255,255,.12);line-height:1}
 .pass .chip{background:rgba(255,255,255,.24);padding:5px 11px;border-radius:999px;font-size:12px;font-weight:800}
 .pass h3{font-size:26px;margin:12px 0 4px;letter-spacing:-.04em;font-weight:900}
@@ -96,7 +90,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .week-cap{font-size:12px;font-weight:700;margin-top:8px;opacity:.9;position:relative;z-index:1}
 .receipt{background:var(--bg);border-radius:16px;padding:14px 16px;text-align:left;margin-bottom:18px}
 .rc-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;border-bottom:1px dashed #cfd6da;font-size:14px}
-.rc-head span{font-size:11px;color:var(--sub);font-weight:700}
+.rc-head span{font-size:12px;color:var(--sub);font-weight:700}
 .rc-row{display:flex;justify-content:space-between;gap:10px;padding:9px 0;font-size:14px;font-weight:600}
 .rc-row b{font-weight:800;white-space:nowrap}
 .rc-row.on b{color:var(--mint-d)}
@@ -108,14 +102,14 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .tiers{margin-top:26px;display:grid;gap:12px}
 .tier{display:flex;align-items:center;gap:16px;border:2px solid var(--line);border-radius:20px;padding:18px;background:#fff;position:relative;transition:.15s}
 .tier.on{border-color:var(--mint);background:var(--mint-bg)}
-.tier .rate{flex:0 0 88px;height:88px;border-radius:22px;background:var(--mint);color:#fff;display:grid;place-items:center;text-align:center;line-height:1}
-.tier .rate small{font-size:11px;font-weight:800;display:block;margin-bottom:3px;opacity:.9}
+.tier .rate{flex:0 0 88px;height:88px;border-radius:22px;background:var(--mint);color:var(--on-mint);display:grid;place-items:center;text-align:center;line-height:1}
+.tier .rate small{font-size:12px;font-weight:800;display:block;margin-bottom:3px;opacity:.9}
 .tier .rate strong{font-size:32px;font-weight:900;letter-spacing:-.04em}
-.tier:nth-child(2) .rate{background:var(--mint-d)}
+.tier:nth-child(2) .rate{background:var(--mint-d);color:#fff}
 .tier:nth-child(3) .rate{background:var(--ink);color:var(--yellow)}
 .tier h3{font-size:18px;letter-spacing:-.04em;font-weight:800}
 .tier p{font-size:13px;color:var(--sub);margin-top:2px}
-.tier .hot{position:absolute;top:-11px;right:14px;background:var(--red);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:999px}
+.tier .hot{position:absolute;top:-11px;right:14px;background:var(--red);color:#fff;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px}
 .calc{margin-top:22px;background:var(--ink);color:#fff;border-radius:20px;padding:22px}
 .calc label{font-size:14px;font-weight:700}
 .calc input[type=range]{width:100%;margin:14px 0 8px;accent-color:var(--mint);height:6px}
@@ -127,12 +121,12 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 /* C packages */
 .tabs{display:flex;gap:8px;margin-top:24px;overflow-x:auto;padding-bottom:4px}
 .tab{flex:1 0 auto;padding:12px 18px;border-radius:999px;border:2px solid var(--line);font-weight:800;font-size:14px;white-space:nowrap;background:#fff}
-.tab.on{background:var(--mint);border-color:var(--mint);color:#fff}
+.tab.on{background:var(--mint);border-color:var(--mint);color:var(--on-mint)}
 .pkg{display:none;margin-top:14px;border:1px solid var(--line);border-radius:22px;overflow:hidden}
 .pkg.on{display:block}
 .pkg-photo{display:block;width:100%;height:180px;object-fit:cover}
 .pkg-top{padding:26px 24px;background:var(--mint-bg);position:relative;overflow:hidden}
-.pkg-top .no{font-size:64px;font-weight:900;line-height:1;color:var(--mint);letter-spacing:-.06em;opacity:.55}
+.pkg-top .no{font-size:52px;line-height:1.1;letter-spacing:.04em}
 .pkg-top h3{font-size:23px;margin-top:6px;letter-spacing:-.04em;font-weight:900}
 .pkg-top p{font-size:14px;color:var(--sub);margin-top:4px}
 .pkg-body{padding:16px 24px}
@@ -147,7 +141,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .reserve h4{font-size:14px;color:var(--sub);margin-bottom:12px;font-weight:700}
 .times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .time{padding:13px 0;border-radius:12px;background:#fff;border:2px solid var(--line);font-weight:800;font-size:15px;font-variant-numeric:tabular-nums}
-.time.on{border-color:var(--mint);background:var(--mint);color:#fff}
+.time.on{border-color:var(--mint);background:var(--mint);color:var(--on-mint)}
 .result{margin-top:16px;background:#fff;border-radius:16px;padding:18px;display:flex;gap:16px;align-items:center}
 .result .big{font-size:40px;font-weight:900;color:var(--mint-d);letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
 .result .big small{display:block;font-size:12px;color:var(--sub);font-weight:700;letter-spacing:0;margin-bottom:6px}
@@ -157,7 +151,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 /* steps */
 .steps{margin-top:26px;display:grid;gap:12px}
 .step{display:flex;gap:16px;align-items:center;padding:20px;border-radius:18px;background:var(--bg)}
-.step .n{flex:0 0 40px;height:40px;border-radius:50%;background:var(--mint);color:#fff;font-weight:900;display:grid;place-items:center}
+.step .n{flex:0 0 40px;height:40px;border-radius:50%;background:var(--mint);color:var(--on-mint);font-weight:900;display:grid;place-items:center}
 .step b{display:block;font-size:16px;font-weight:800}
 .step span{font-size:13px;color:var(--sub)}
 
@@ -180,8 +174,8 @@ details p{margin-top:10px;color:var(--sub);font-size:14px}
 .recap b{display:block;color:#fff;font-size:15px;font-weight:800}
 .stores{display:grid;gap:10px;margin:26px auto 0;max-width:360px}
 .store{height:56px;border-radius:14px;background:#fff;color:var(--ink);font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px}
-.store.primary{background:var(--mint);color:#fff}
-.qr{margin:24px auto 0;width:116px;height:116px;background:#fff;border-radius:14px;display:grid;place-items:center;color:var(--ink);font-size:11px;font-weight:700;padding:8px;text-align:center}
+.store.primary{background:var(--mint);color:var(--on-mint)}
+.qr{margin:24px auto 0;width:116px;height:116px;background:#fff;border-radius:14px;display:grid;place-items:center;color:var(--ink);font-size:12px;font-weight:700;padding:8px;text-align:center}
 .qr-cap{font-size:12px;color:#8fcfcc;margin-top:8px}
 
 footer{padding:28px 20px 36px;font-size:12px;color:var(--sub);line-height:1.7}
@@ -218,11 +212,11 @@ footer li::before{content:"· "}
   .hero h1{font-size:58px}
   .hero p{font-size:19px}
   .chips{justify-content:flex-start}
-  .hero-cta-copy{display:inline-flex;min-width:260px}
+  .hero-cta-copy{display:inline-flex;width:auto;min-width:260px}
   .hero-card{margin:0;max-width:none}
   h2{font-size:36px}
   .lead{font-size:17px}
-  .quick .ic{width:72px;height:72px;font-size:24px}
+  .quick .ic{width:72px;height:72px;font-size:34px}
   .quick a{font-size:15px}
   .pass{padding:40px 44px}
   .pass h3{font-size:32px}
@@ -269,35 +263,51 @@ footer li::before{content:"· "}
   .sticky .btn{width:100%}
   .btn{padding:0 16px;font-size:15px}
 }
+/* --- 예약주문 타임라인 --- */
+.timeline{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);margin-top:14px;background:#fff;border-radius:16px;padding:18px 8px 14px;position:relative}
+.timeline::before{content:"";position:absolute;left:16.6%;right:16.6%;top:28px;height:3px;background:var(--mint-bg)}
+.timeline li{position:relative;text-align:center;font-size:13px;color:var(--sub);font-weight:700}
+.timeline li::before{content:"";display:block;width:14px;height:14px;margin:0 auto 8px;border-radius:50%;background:#fff;border:3px solid var(--mint);position:relative;z-index:1}
+.timeline li.end::before{background:var(--mint)}
+.timeline b{display:block;font-size:17px;color:var(--ink);font-weight:900;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.timeline li.end b{color:var(--mint-d)}
 /* --- 배달앱 느낌 보강 --- */
 .pass .price .off{display:inline-block;margin-left:8px;background:var(--yellow);color:var(--ink);font-size:12px;font-weight:900;padding:3px 8px;border-radius:999px;vertical-align:middle;letter-spacing:0}
 .qr{width:132px;height:132px;padding:10px}
 .qr svg{display:block;width:100%;height:100%}
 .sticky{background:linear-gradient(to top,var(--card) 62%,rgba(255,255,255,0));border-top:0;padding-top:18px}
-.cartbar{display:flex;align-items:center;gap:12px;width:100%;background:var(--mint);color:#fff;border-radius:16px;padding:10px 16px 10px 10px;box-shadow:0 8px 24px rgba(18,144,122,.35);transition:transform .15s}
+.cartbar{display:flex;align-items:center;gap:12px;width:100%;background:var(--mint);color:var(--on-mint);border-radius:16px;padding:10px 16px 10px 10px;box-shadow:0 8px 24px rgba(18,144,122,.35);transition:transform .15s}
 .cartbar:active{transform:scale(.985)}
 .cb-pill{flex:none;background:#fff;color:var(--mint-d);font-weight:900;font-size:13px;border-radius:12px;padding:10px 12px;letter-spacing:-.02em}
 .cb-txt{flex:1;min-width:0;font-weight:800;font-size:17px;line-height:1.25;letter-spacing:-.02em}
-.cb-txt small{display:block;font-size:11px;font-weight:600;opacity:.92;letter-spacing:0}
+.cb-txt small{display:block;font-size:12px;font-weight:600;opacity:.92;letter-spacing:0}
 .cb-arrow{flex:none;font-size:20px;font-weight:900}
 .stores-row{display:flex;gap:12px;margin:24px -20px 0;padding:2px 20px 10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;-webkit-overflow-scrolling:touch}
 .shop{flex:0 0 78%;max-width:320px;scroll-snap-align:start;display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;box-shadow:0 4px 14px rgba(20,40,40,.06)}
-.shop .thumb{flex:none;width:72px;height:72px;border-radius:18px;background:var(--mint-bg);color:var(--mint-d);display:grid;place-items:center;font-size:30px;font-weight:900}
+.shop .thumb{flex:none;width:72px;height:72px;border-radius:18px;background:var(--mint-bg);color:var(--mint-d);display:grid;place-items:center;font-size:36px;line-height:1}
 .shop:nth-child(2) .thumb{background:#fff3c4;color:#8a6a00}
 .shop:nth-child(3) .thumb{background:#ffe3e0;color:#b4382f}
 .shop:nth-child(4) .thumb{background:#e4e8ff;color:#3b45a8}
 .shop .info{min-width:0}
 .shop b{display:block;font-size:16px;font-weight:800;letter-spacing:-.03em}
 .shop .meta{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12px;color:var(--sub);margin-top:4px;font-weight:600}
-.shop .star{color:#f08c00;font-weight:800}
+.shop .star{color:#b45f00;font-weight:800}
 .shop .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
-.shop .tags i{font-style:normal;font-size:11px;font-weight:800;color:var(--mint-dd);background:var(--mint-bg);padding:3px 8px;border-radius:6px}
+.shop .tags i{font-style:normal;font-size:12px;font-weight:800;color:var(--mint-dd);background:var(--mint-bg);padding:3px 8px;border-radius:6px}
 @media(min-width:900px){
   .stores-row{display:grid;grid-template-columns:repeat(2,1fr);margin:28px 0 0;padding:0;overflow:visible}
   .shop{flex:initial;max-width:none}
   .sticky .wrap{max-width:560px}
 }
 @media(max-width:340px){ .stores-row{margin-left:-14px;margin-right:-14px;padding-left:14px;padding-right:14px;scroll-padding-left:14px} .cb-txt small{display:none} .cb-pill{padding:9px 10px} .cb-txt{font-size:15px} .shop{flex-basis:88%} .shop .thumb{width:56px;height:56px;font-size:24px} }
+/* --- 접근성 보강 (대비·포커스·모션) --- */
+a,button,summary,input{touch-action:manipulation}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:8px}
+.hero a:focus-visible,.final a:focus-visible{outline-color:#fff}
+.sticky a:focus-visible{outline-offset:-3px}
+.quick .ic svg{width:30px;height:30px;stroke:var(--mint-dd);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(min-width:900px){.quick .ic svg{width:38px;height:38px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -317,7 +327,7 @@ footer li::before{content:"· "}
     <h1>회사 점심,<br>한끼온으로 <span>더 싸게</span></h1>
     <p>단체 도시락부터 야근 식대까지<br>회사 점심에 필요한 혜택을 앱에서 한 번에</p>
     <ul class="chips">
-      <li>런치패스</li>
+      <li>런치패스 월 4,900원</li>
       <li>최대 10% 추가 할인</li>
       <li>상황별 패키지 3종</li>
       <li>예약주문</li>
@@ -330,7 +340,7 @@ footer li::before{content:"· "}
     <div class="hero-card">
       <div class="receipt" aria-label="주문서 예시">
         <div class="rc-head"><b>회사점심 주문서</b><span>예시 화면</span></div>
-        <div class="rc-row"><span>도시락 외 12건</span><b>120,000원</b></div>
+        <div class="rc-row"><span>🍱 도시락 외 12건</span><b>120,000원</b></div>
         <div class="rc-row on"><span>런치패스</span><b>자동 적용</b></div>
         <div class="rc-row on"><span>10만 원 이상 추가 5%</span><b>-6,000원</b></div>
         <div class="rc-row"><span>도착 예약</span><b>오늘 12:00</b></div>
@@ -354,10 +364,10 @@ footer li::before{content:"· "}
 
   <!-- 2. QUICK NAV -->
   <section class="quick" aria-label="혜택 바로가기">
-    <a href="#pass"><div class="ic">01</div>런치패스</a>
-    <a href="#tier"><div class="ic">02</div>추가 할인</a>
-    <a href="#package"><div class="ic">03</div>상황별 패키지</a>
-    <a href="#reserve"><div class="ic">04</div>예약주문</a>
+    <a href="#pass"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9a2 2 0 0 0 0 6v2a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-2a2 2 0 0 1 0-6V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14 6v12" stroke-dasharray="2 2"/></svg></div>런치패스</a>
+    <a href="#tier"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z"/><path d="M9 8h6M9 12h6"/></svg></div>추가 할인</a>
+    <a href="#package"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 11h18M12 11v8"/></svg></div>상황별 패키지</a>
+    <a href="#reserve"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M5 4 3 6M19 4l2 2"/></svg></div>예약주문</a>
   </section>
 
   <!-- 3. A 런치패스 -->
@@ -429,7 +439,7 @@ footer li::before{content:"· "}
 
     <div class="pkg on" id="p1">
       <img class="pkg-photo" src="images/pkg-meeting.jpg" alt="회의실 샌드위치와 커피" onerror="this.remove()">
-      <div class="pkg-top"><div class="no">01</div><h3>회의·세미나 패키지</h3><p>정시에 도착하고, 먹기 편한 메뉴 위주로 구성</p></div>
+      <div class="pkg-top"><div class="no" aria-hidden="true">🥪☕</div><h3>회의·세미나 패키지</h3><p>정시에 도착하고, 먹기 편한 메뉴 위주로 구성</p></div>
       <div class="pkg-body"><ul>
         <li>샌드위치 · 김밥 · 도시락 세트<span>개별 포장</span></li>
         <li>음료 · 커피 함께 주문<span>한 번에 결제</span></li>
@@ -440,7 +450,7 @@ footer li::before{content:"· "}
 
     <div class="pkg" id="p2">
       <img class="pkg-photo" src="images/pkg-overtime.jpg" alt="야근 중 저녁 식사" onerror="this.remove()">
-      <div class="pkg-top"><div class="no">02</div><h3>야근 식대 패키지</h3><p>늦은 저녁에도 든든하게, 팀원 취향 따라 개별 주문</p></div>
+      <div class="pkg-top"><div class="no" aria-hidden="true">🌙🍗</div><h3>야근 식대 패키지</h3><p>늦은 저녁에도 든든하게, 팀원 취향 따라 개별 주문</p></div>
       <div class="pkg-body"><ul>
         <li>한식 · 분식 · 치킨 · 버거 다양하게<span>취향별 선택</span></li>
         <li>식대 한도 내 주문 관리<span>법인 결제 연동 가능</span></li>
@@ -451,7 +461,7 @@ footer li::before{content:"· "}
 
     <div class="pkg" id="p3">
       <img class="pkg-photo" src="images/pkg-event.jpg" alt="사내 행사 대용량 음식" onerror="this.remove()">
-      <div class="pkg-top"><div class="no">03</div><h3>사내 행사 패키지</h3><p>워크숍 · 간담회 · 팀 빌딩에 넉넉한 대용량 구성</p></div>
+      <div class="pkg-top"><div class="no" aria-hidden="true">🎉🍕</div><h3>사내 행사 패키지</h3><p>워크숍 · 간담회 · 팀 빌딩에 넉넉한 대용량 구성</p></div>
       <div class="pkg-body"><ul>
         <li>대용량 파티 트레이 · 케이터링<span>20인 이상</span></li>
         <li>음식 + 디저트 + 음료 한 번에<span>행사 전체 구성</span></li>
@@ -479,6 +489,11 @@ footer li::before{content:"· "}
         <div class="big"><small>도착 예정</small><span id="rt">12:00</span></div>
         <p><b>이 시간에 맞춰 도착해요</b>점심 피크 전에 미리 준비해 배달합니다.</p>
       </div>
+      <ol class="timeline" aria-label="예약주문 진행 순서">
+        <li><b id="tl-1">11:30</b><span>주문 접수</span></li>
+        <li><b id="tl-2">11:50</b><span>조리 완료</span></li>
+        <li class="end"><b id="tl-3">12:00</b><span>도착</span></li>
+      </ol>
     </div>
     <a href="#download" class="btn btn-mint sec-cta" data-cta="reserve">예약주문 앱에서 해보기 →</a>
   </section>
@@ -490,7 +505,7 @@ footer li::before{content:"· "}
     <p class="lead">단체 주문이 많은 가게를 모았어요. (학습용 예시 가게)</p>
     <div class="stores-row">
       <a class="shop" href="#download" data-cta="shop-1">
-        <div class="thumb">도</div>
+        <div class="thumb" aria-hidden="true">🍱</div>
         <div class="info">
           <b>든든한 도시락집</b>
           <div class="meta"><span class="star">★ 4.8</span><span>25~35분</span><span>최소 5만 원</span></div>
@@ -498,7 +513,7 @@ footer li::before{content:"· "}
         </div>
       </a>
       <a class="shop" href="#download" data-cta="shop-2">
-        <div class="thumb">김</div>
+        <div class="thumb" aria-hidden="true">🥪</div>
         <div class="info">
           <b>김밥&amp;샌드 연구소</b>
           <div class="meta"><span class="star">★ 4.7</span><span>20~30분</span><span>최소 3만 원</span></div>
@@ -506,7 +521,7 @@ footer li::before{content:"· "}
         </div>
       </a>
       <a class="shop" href="#download" data-cta="shop-3">
-        <div class="thumb">한</div>
+        <div class="thumb" aria-hidden="true">🍚</div>
         <div class="info">
           <b>오늘의 한식뷔페</b>
           <div class="meta"><span class="star">★ 4.9</span><span>30~40분</span><span>최소 10만 원</span></div>
@@ -514,7 +529,7 @@ footer li::before{content:"· "}
         </div>
       </a>
       <a class="shop" href="#download" data-cta="shop-4">
-        <div class="thumb">야</div>
+        <div class="thumb" aria-hidden="true">🍗</div>
         <div class="info">
           <b>야근 키친</b>
           <div class="meta"><span class="star">★ 4.6</span><span>25~35분</span><span>최소 2만 원</span></div>
@@ -554,7 +569,7 @@ footer li::before{content:"· "}
     <h2>오늘 점심부터<br><em>앱에서</em> 시작하세요</h2>
     <p class="lead">런치패스 · 추가 할인 · 예약주문, 모두 한끼온 앱에서</p>
     <ul class="recap">
-      <li><b>런치패스</b>평일 점심 자동 할인</li>
+      <li><b>런치패스 월 4,900원</b>평일 점심 자동 할인</li>
       <li><b>금액대별 추가 할인</b>5만 원 3% · 10만 원 5% · 20만 원 10%</li>
       <li><b>상황별 패키지</b>회의·세미나 / 야근 식대 / 사내 행사</li>
       <li><b>예약주문</b>원하는 도착 시간 지정</li>
@@ -584,7 +599,7 @@ footer li::before{content:"· "}
   <div class="wrap">
     <a href="#download" class="cartbar" data-cta="sticky">
       <span class="cb-pill">최대 10%</span>
-      <span class="cb-txt"><small>런치패스 · 최대 10% 추가 할인 · 예약주문</small>앱에서 혜택 받기</span>
+      <span class="cb-txt"><small>런치패스 · 최대 10% · 예약주문</small>앱에서 혜택 받기</span>
       <span class="cb-arrow" aria-hidden="true">→</span>
     </a>
   </div>
@@ -661,15 +676,16 @@ function track(name,props){
   });
 })();
 
-// 다운로드 섹션이 보이면 하단 고정 CTA는 숨김 (중복 방지)
+// 히어로 CTA나 다운로드 섹션이 화면에 보이면 하단 고정 CTA는 숨김 (같은 버튼 중복 방지)
 (function(){
-  var bar=document.querySelector('.sticky'), dl=document.getElementById('download');
+  var bar=document.querySelector('.sticky'), targets=[document.querySelector('.hero-cta-copy'),document.getElementById('download')], vis=[false,false];
   if(!('IntersectionObserver' in window)) return;
-  new IntersectionObserver(function(e){
-    bar.style.transform=e[0].isIntersecting?'translateY(110%)':'none';
-  },{threshold:.35}).observe(dl);
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ vis[targets.indexOf(e.target)]=e.isIntersecting; });
+    bar.style.transform=(vis[0]||vis[1])?'translateY(110%)':'none';
+  },{threshold:.35});
+  targets.forEach(function(el){ if(el) io.observe(el); });
 })();
-
 // 금액대별 할인 계산기
 (function(){
   var r=document.getElementById('amt'), tiers=[].slice.call(document.querySelectorAll('.tier'));
@@ -694,12 +710,21 @@ document.querySelectorAll('.tab').forEach(function(t){
   });
 });
 
+// 예약주문 타임라인: 도착 30분 전 접수, 10분 전 조리 완료 (예시)
+function tl(t){
+  var p=t.split(':'), m=(+p[0])*60+(+p[1]);
+  function f(x){ return ('0'+Math.floor(x/60)).slice(-2)+':'+('0'+(x%60)).slice(-2); }
+  document.getElementById('tl-1').textContent=f(m-30);
+  document.getElementById('tl-2').textContent=f(m-10);
+  document.getElementById('tl-3').textContent=t;
+}
+
 // 예약주문 시간 선택
 document.querySelectorAll('.time').forEach(function(b){
   b.addEventListener('click',function(){
     document.querySelectorAll('.time').forEach(function(x){x.classList.remove('on')});
     b.classList.add('on');
-    document.getElementById('rt').textContent=b.dataset.t; track('reserve_time_select',{time:b.dataset.t});
+    document.getElementById('rt').textContent=b.dataset.t; tl(b.dataset.t); track('reserve_time_select',{time:b.dataset.t});
   });
 });
 </script>
